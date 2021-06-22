@@ -8,7 +8,7 @@ ENV UNI_LB_RELEASE=${UNI_LB_RELEASE}
 
 ADD ${UNI_LB_RELEASE} /tmp/unicorn-loadbalancer.tar.gz
 
-RUN mkdir -p /tmp/unicorn /unicorn && tar -xvf /tmp/unicorn-loadbalancer.tar.gz -C /tmp/unicorn && cd /tmp/unicorn/* && mv * /unicorn && cd /unicorn && npm i
+RUN mkdir -p /tmp/unicorn /unicorn && tar -xvf /tmp/unicorn-loadbalancer.tar.gz -C /tmp/unicorn && cd /tmp/unicorn/* && mv * /unicorn && rm /tmp/unicorn-loadbalancer.tar.gz
 
 
 COPY root/ /
